@@ -1,0 +1,13 @@
+% extends 'base.html' %
+
+{% block title %}error {{ err_code }}{% endblock title %}
+
+{% block content %}
+<h1>Error {{err_code }}</h1>
+<p>
+    The operation you requestewd failed with error code: {{ err_code }}.
+</p>
+<p>
+    Please try again later.
+</p>
+{% endblock content %}

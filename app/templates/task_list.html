@@ -5,12 +5,16 @@
 
 {% block content %}
 <h1>Tasks</h1>
-<ul>
-    {% for task in tasks %}
-        <li>{{ task["summary"] }} 
-            <br> 
-            {{ task["description"]}}
-        </li>
-    {% endfor %}
-</ul>
+{% for task in tasks %}
+<div class="card text-center" style="width: 18rem;">
+    <div class="card-body bg-warning-subtle">
+      <h5 class="card-title">{{ task["summary"] }}</h5>
+      <a href="{{ url_for('get_edit_form', pk=task['id']) }}">
+        <i class="bi bi-pencil"></i>
+      </a>
+      
+      <p class="card-text">{{ task["description"]}}</p>
+    </div>
+  </div>
+{% endfor %}
 {% endblock content %}
